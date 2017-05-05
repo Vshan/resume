@@ -1,0 +1,179 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Classicthesis-Styled CV
+% LaTeX Template
+% Version 1.0 (22/2/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Alessandro Plasmati
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{scrartcl}
+
+\reversemarginpar % Move the margin to the left of the page 
+
+\newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small#1}} % New command defining the margin text style
+
+\usepackage[nochapters]{classicthesis} % Use the classicthesis style for the style of the document
+\usepackage[LabelsAligned]{currvita} % Use the currvita style for the layout of the document
+
+\renewcommand{\cvheadingfont}{\LARGE\color{Maroon}} % Font color of your name at the top
+
+\usepackage{hyperref} % Required for adding links	and customizing them
+\hypersetup{colorlinks, breaklinks, urlcolor=Maroon, linkcolor=Maroon} % Set link colors
+
+\newlength{\datebox}\settowidth{\datebox}{Spring 2011} % Set the width of the date box in each block
+
+\newcommand{\NewEntry}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\small \textit{#1}}\hspace{1.5em} #2 #3 % Define a command for each new block - change spacing and font sizes here: #1 is the left margin, #2 is the italic date field and #3 is the position/employer/location field
+\vspace{0.5em}} % Add some white space after each new entry
+
+\newcommand{\Description}[1]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize\vspace{1em}} % Define a command for descriptions of each entry - change spacing and font sizes here
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\thispagestyle{empty} % Stop the page count at the bottom of the first page
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{cv}{\spacedallcaps{Vinay Bhat}}\vspace{1.5em} % Your name
+
+\noindent\spacedlowsmallcaps{Personal Information}\vspace{0.5em} % Personal information heading
+
+\NewEntry{email}{\href{mailto:vinaybhat001@gmail.com}{vinaybhat001@gmail.com}} % Email address
+
+\NewEntry{website}{\href{https://github.com/vshan}{https://github.com/vshan}} % Personal website
+
+\NewEntry{phone}{+91 8105235201\ \ $\cdotp$\ \ +91 9686625411} % Phone number(s)
+
+\vspace{1em} % Extra white space between the personal information section and goal
+
+\noindent\spacedlowsmallcaps{Education}\vspace{1em}
+
+\NewEntry{2014-2018}{National Institute of Technology, Karnataka}
+
+\Description{\MarginText{NIT Karnataka}Bachelor of Technology in Information Technology\newline
+High-impact systems developer, builder of artificial intelligence models, functional programming evangelist. Deeply interested in the interesection of language and computing. Also a 3rd year CS/IT undergraduate.}
+
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\noindent\spacedlowsmallcaps{Work Experience}\vspace{1em}
+
+\NewEntry{Winter 2016}{Artifial Intelligence Intern, \textsc{YellowAnt}}
+
+\Description{\MarginText{YellowAnt (startup)}Deep Learning, Natural Language Processing\newline
+Built a Neural Conversation Model consisting of a classifier to classify the incoming user query as either knowledge-seeking (eg: What is a steam engine?) or conversational (eg. Hi how are you?), and then further cascading the query to a retrieval sequence-autoencoder model for answering the knowledge-seeking queries and the others to a generative sequence-to-sequence model for answering the conversational queries. The engine is completely data-driven as we generalise our code to fit any domain. It acts as a framework for creating closed-domain agents and also for making general purpose chatbots by feeding it the right kind of data. The models were built using TensorFlow and Keras.}
+
+%------------------------------------------------
+
+\NewEntry{Summer 2016}{Research Intern, \textsc{Siemens Corp. Research}}
+
+\Description{\MarginText{Siemens Research}Artificial Intelligence, Natural Language Processing, Computational Semantics. Built Knowledge Based System Builder, an AI framework for creating KBS apps. Built the core NLP engine, for translating natural language to first-order logic using NLTK in Python. Designed and implemented a REST API for the core server, which served the API endpoints for all AI agents using Flask in Python. Built the web front-end generator for the applications using JavaScript and Python.}
+
+%------------------------------------------------
+
+\NewEntry{Winter 2015}{Open Source Intern, \textsc{IIT Bombay}}
+
+\Description{\MarginText{IIT Bombay}Worked on IIT Bombay’s fork of Scilab, an open source equivalent to Matlab. Designed and implemented algorithms for morphological image analysis and processing.
+\\ Technology stack: C++, OpenCV, Scilab, Git}
+
+%------------------------------------------------
+
+\NewEntry{Summer 2015}{Web Development Intern, \textsc{Make A Difference}}
+
+\Description{\MarginText{Make a Difference (NGO)}Wrote code for India's first offline web fundraising platform, streamlining transactions from across 23 cities impacting 20,000 children in shelter homes. Built the server responding to SMS requests to develop offline functionality.
+\\ Technology stack: Ruby, Ruby on Rails, MySQL, AngularJS, jQuery, Git}
+
+\vspace{1em} % Extra space between major sections
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
+\spacedlowsmallcaps{Notable Projects}\vspace{1em}
+
+\NewEntry{Jan-Apr 2017}{Visual Question Answering}
+
+\Description{\MarginText{Deep Learning, Natural Language Processing}Built an end-to-end system to answer questions from an image, by constructing a model involving extracting image features from VGG19 Convolutional Neural Network and then applying a linear transformation to feed it along with word vectors generated from questions, to a Bidirectional LSTM (Long Short Term Memory) Recurrent Neural Network, and finally generating the answer by modeling it as a softmax classification task over the answer vocabulary. Used the Deep Learning libraries in Python: Keras and TensorFlow.}
+
+%------------------------------------------------
+
+\NewEntry{Jan-Apr 2017}{Smart Assistant enabled Room Automation}
+
+\Description{\MarginText{Internet of Things, Natural Language Processing, Multithreaded Systems}Built a smart agent capable of understanding fluid natural language queries to undertake concrete actions such as turning off the lights, fan and other electronics and also capable of answering factual or trivia questions. Coupled this with a room automation system using sensors on a Raspberry Pi which detected if person was in the room using PIR sensor, detected temperature using humidity sensor and finally a LDR sensor to detect the amount of light in room. The data from sensors is then used to make intelligent decisions.  Built using Naive Bayes classifiers, multithreading for running the individual components concurrently, Raspberry Pi, all in Python and Raspbian OS.}
+
+%------------------------------------------------
+
+\NewEntry{Sep-Nov 2016}{Distributed Database Management System}
+
+\Description{\MarginText{Distributed Databases}xbase: Distributed relational database management system with a natural language interface, for massively scalable and user friendly data storage solutions, along with web front end for analytics. C++, Python, JS}
+
+%------------------------------------------------
+
+\NewEntry{Sep-Nov 2016}{Distributed Access Shell}
+
+\Description{\MarginText{Distributed Systems} dash: Distributed access shell, for command execution, redirection and remote piping simultaneously between multiple hosts connected over a network. Completely from scratch. A new innovative shell, allows inter-host, inter-process communication by combining the two fundamental UNIX abstractions: sockets and pipes, allowing distributed command execution and redirection. Uses C TCP sockets, various other Unix IPC features and a custom designed
+protocol. C, C++, Make}
+
+%------------------------------------------------
+\NewEntry{Jan-Apr 2016}{xv6p}
+
+\Description{\MarginText{Operating Systems} xv6p: xv6p implements demand paging from disk and lazy page allocation, using x86 paging hardware to MIT's xv6 Operating System. C, 8086 assembly}
+
+%------------------------------------------------
+
+\NewEntry{Sep-Nov 2015}{TaskSync}
+
+\Description{\MarginText{Functional Programming}TaskSync: Personal-assistant like task manager, logger and web crawler. Generates periodic automatic reports. Syncs with Google Keep. Haskell, Ruby, bash.}
+
+%------------------------------------------------
+
+\NewEntry{Jan-Apr 2015}{SchedMe}
+
+\Description{\MarginText{Web Development}SchedMe. Auto scheduler of tasks and goals distributing evenly using AI algorithms across some timeline, with drag and drop support. Ruby on Rails, JavaScript, MySQL}
+
+%------------------------------------------------
+
+
+
+
+\vspace{1em} % Extra space between major sections
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS
+%----------------------------------------------------------------------------------------
+
+\spacedlowsmallcaps{Key Skills}\vspace{1em}
+
+\Description{\MarginText{Systems Programming}C, C++, Java, Shell Scripting, Git}
+
+\Description{\MarginText{AI, NLP}Textblob, Python, NLTK, Keras, TensorFlow, CNTK}
+
+\Description{\MarginText{Functional Programming}Common Lisp, Erlang, Haskell}
+
+\Description{\MarginText{Web Development}Ruby on Rails, Flask, Python, VueJS, Javascript, HTML, CSS}
+
+%----------------------------------------------------------------------------------------
+
+\end{cv}
+
+\end{document}
